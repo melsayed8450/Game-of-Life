@@ -61,7 +61,7 @@ function selectCell(event){
   const id = cell.id;
   const value =  gridArray[parseInt(id/1000)][id%1000];
   gridArray[parseInt(id/1000)][id%1000] = value == 0 ? 1: 0;
-  cell.style.setProperty('background-color', getRainbowColor(parseInt(id/1000), id% 1000));
+  value == 0 ? cell.style.setProperty('background-color', getRainbowColor(parseInt(id/1000), id% 1000)) : cell.style.setProperty('background-color', '#ffffff');
 }
 
 function clear(){

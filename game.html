@@ -7,27 +7,28 @@
     <title>Game of Life</title>
 </head>
 <body>
-        <div class="container">
-    <div id="grid-container"></div></div>
-    </div>
+    <div class="vertical-container">
+        <div id="grid-container"></div>
+        <div class="vertical-container">
+        <div class="horizontal-container">
         <button class="button" id="start-button">Start</button>
         <button class="button" id="stop-button">Stop</button>
         <button class="button" id="clear-button">Clear</button>
         <button class="button" id="random-button">Random</button>
         <button class="button" id="fill-button">Fill all</button>
-        <div class="vertical-container">
-        <div class="horizontal-container">
-            <span>Speed: </span>
+        </div>
+        <div id="horizontal-container">
+        <span>Speed: </span>
         <span id="slider-value">50</span>
-    </div>
+        </div>
         <input type="range" id="slider" min="1" max="100" step="1" value="50">
         <div class="horizontal-container">
         <label for="tremove-borders">Remove borders:</label>
-  <input type="checkbox" id="remove-borders" value="true">
-</div>
-        
-</div>
-<script src="game.js"></script>
-    
+        <input type="checkbox" id="remove-borders" value>
+        </div>
+        </div>
+
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
