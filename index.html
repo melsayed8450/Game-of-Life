@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Game of Life</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Game of Life</title>
 </head>
 <body>
-    <div class="vertical-container">
-    <div id="grid-container"></div>
-    <div class="horizontal-container">
-        <button class="button" id="start-button">Start</button>
-        <button class="button" id="stop-button">Stop</button>
-        <button class="button" id="clear-button">Clear</button>
-        <button class="button" id="random-button">Random</button>
-        <span>Speed</span>
-        <input type="range" id="slider" min="1" max="100" step="1" value="50">
-  <span id="slider-value">50</span>
+  <div class="vertical-container">
+    <label for="rowsInput" class="input-label">Enter number of Rows:</label>
+    <input id="rowsInput" type="number" class="input-field" value="50" min="1" max="1000">
+    <label for="columnsInput" class="input-label">Enter number of Columns:</label>
+    <input id="columnsInput" type="number" class="input-field"value="50" min="1" max="1000">
+      <button class="button" id="startGameButton">Start Game</button>
     </div>
-</div>
-    
-    
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 </html>

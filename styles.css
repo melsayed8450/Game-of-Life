@@ -1,25 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
 .vertical-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh; /* Adjust the height as needed */
+    /* height: 100vh;  */
   }
 .horizontal-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
   }
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(100, 15px);
-    grid-template-rows: repeat(40, 15px);
   }
   
   .grid-cell {
     border: 1px solid black;
     font-size: 5px;
-    color: chocolate;
 
   }
   .selected-cell {
@@ -44,5 +47,26 @@
   
   .button:active {
     background-color: #3e8e41;
+  }
+  
+  .input-field {
+    padding: 10px 50px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .input-label {
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    font-size: 20px;
   }
   
