@@ -195,7 +195,7 @@ function getRainbowColor(i, j) {
 
    
         for(let i = 0; i < gridCells.length; i++){
-            if(removeBordersCheckBox.checked){
+            if(!removeBordersCheckBox.checked){
                 gridCells[i].style.setProperty('border', '1px solid black');
 
             }
