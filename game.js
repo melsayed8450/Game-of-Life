@@ -13,6 +13,7 @@ function init() {
   const startButton = document.getElementById('start-button');
   const stopButton = document.getElementById('stop-button');
   const randomButton = document.getElementById('random-button');
+  const fillButton = document.getElementById('fill-button');
   const slider = document.getElementById('slider');
   const sliderValue = document.getElementById('slider-value');
   const removeBordersCheckBox = document.getElementById('remove-borders');
@@ -43,6 +44,7 @@ function init() {
   startButton.addEventListener('click', start);
   stopButton.addEventListener('click', stop);
   randomButton.addEventListener('click', random);
+  fillButton.addEventListener('click', fillAll);
   removeBordersCheckBox.addEventListener('change', toggleBorders);
   slider.addEventListener('input', function() {
     speed = parseInt(slider.value);
@@ -59,7 +61,6 @@ function selectCell(event){
   const id = cell.id;
   const value =  gridArray[parseInt(id/1000)][id%1000];
   gridArray[parseInt(id/1000)][id%1000] = value == 0 ? 1: 0;
-  const distanceToCenter = parseInt(Math.sqrt(((id/1000)-rows/2)**2 + ((id%1000)-columns/2)**2));
   cell.style.setProperty('background-color', getRainbowColor(parseInt(id/1000), id% 1000));
 }
 
@@ -173,7 +174,7 @@ function getRainbowColor(i, j) {
     const centerJ = parseInt(columns/2);
     const centerI = parseInt(rows/2);
     const distanceToCenter = parseInt(Math.sqrt((i-centerI)**2 + (j-centerJ)**2))
-    const totalPositions = parseInt(Math.sqrt(centerJ**2+centerI**2));
+    const totalPositions = Math.ceil(Math.sqrt(centerJ**2+centerI**2));
     const colorStep = (6) / (totalPositions - 1);
     const startIndex = Math.floor(distanceToCenter * colorStep);
     const endIndex = Math.ceil(distanceToCenter * colorStep);
@@ -195,7 +196,7 @@ function getRainbowColor(i, j) {
 
    
         for(let i = 0; i < gridCells.length; i++){
-            if(removeBordersCheckBox.checked){
+            if(!removeBordersCheckBox.checked){
                 gridCells[i].style.setProperty('border', '1px solid black');
 
             }
@@ -204,4 +205,14 @@ function getRainbowColor(i, j) {
             }
         }
     
+  }
+
+  function fillAll(){
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j <columns;j++){
+        const gridCell = document.getElementById(i*1000+j);
+        gridCell.style.setProperty('background-color', getRainbowColor(i, j));
+        gridArray[i][j] = 1;
+        }
+      }
   }
